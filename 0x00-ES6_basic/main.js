@@ -1,3 +1,3 @@
-import appendToEachArrayValue from './10-loops.js';
+import getBudgetObject from './7-getBudgetObject.js';
 
-console.log(appendToEachArrayValue(['appended', 'fixed', 'displayed'], 'correctly-'));
+console.log(getBudgetObject(400, 700, 900));
