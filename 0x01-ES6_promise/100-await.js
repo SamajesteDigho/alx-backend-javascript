@@ -2,8 +2,10 @@ import { uploadPhoto, createUser } from './utils'
 
 export default async function asyncUploadUser() {
   let result = await Promise.allSettled([uploadPhoto(), createUser()]);
-  if (result.length != 2) {
-    return { photo: null, user: null, };
+  for (const { status } of result) {
+    if (status !== 'fulfilled') {
+      return { photo: null, user: null };
+    }
   }
   return {
     photo: result[0].value,
