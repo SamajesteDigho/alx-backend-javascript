@@ -8,5 +8,5 @@ export default async function asyncUploadUser() {
   return {
     photo: result[0].value,
     user: result[1].value,
-  }
+  };
 }
