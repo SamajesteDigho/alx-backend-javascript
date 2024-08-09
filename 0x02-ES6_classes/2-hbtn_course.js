@@ -18,7 +18,7 @@ export default class HelbertonCourse {
   }
 
   set name(newName) {
-    if (typeof newName === 'string') {
+    if (typeof newName == 'string') {
       this._name = newName;
     } else {
       throw new TypeError('Name must be a string')
@@ -26,7 +26,7 @@ export default class HelbertonCourse {
   }
 
   set length(newLength) {
-    if (typeof newLength === 'number') {
+    if (typeof newLength == 'number') {
       this._length = newLength;
     } else {
       throw new TypeError('Length must be a number')
@@ -34,14 +34,10 @@ export default class HelbertonCourse {
   }
 
   set students(newStudents) {
-    if (Array.isArray(newStudents)) {
-      if (newStudents.every((val) => { return typeof val === 'string'; })) {
+    if (Array.isArray(newStudents) && newStudents.every((val) => { return typeof val == 'string'; })) {
         this._students = newStudents;
-      } else {
-        throw new TypeError('Students must be an array of strings');
-      }
     } else {
-      throw new TypeError('Students must be an array');
+      throw new TypeError('Students must be an array of strings');
     }
   }
 }
