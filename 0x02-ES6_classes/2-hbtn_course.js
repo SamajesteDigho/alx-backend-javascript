@@ -14,28 +14,29 @@ export default class HelbertonCourse {
   }
 
   get students() {
-    return this.students;
+    return this._students;
   }
 
-  set name(newName) {
-    if (typeof newName == 'string') {
-      this._name = newName;
+  set name(name) {
+    if (typeof name == 'string') {
+      this._name = name;
     } else {
       throw new TypeError('Name must be a string')
     }
   }
 
-  set length(newLength) {
-    if (typeof newLength == 'number') {
-      this._length = newLength;
+  set length(length) {
+    if (typeof length == 'number') {
+      this._length = length;
     } else {
       throw new TypeError('Length must be a number')
     }
   }
 
-  set students(newStudents) {
-    if (Array.isArray(newStudents) && newStudents.every((val) => { return typeof val == 'string'; })) {
-        this._students = newStudents;
+  set students(students) {
+    if (Array.isArray(students) &&
+    students.every((val) => { return typeof val == 'string'; })) {
+        this._students = students;
     } else {
       throw new TypeError('Students must be an array of strings');
     }
