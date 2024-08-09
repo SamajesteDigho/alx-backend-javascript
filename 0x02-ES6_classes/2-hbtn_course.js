@@ -35,8 +35,8 @@ export default class HelbertonCourse {
 
   set students(students) {
     if (Array.isArray(students) &&
-    students.every((val) => { return typeof val == 'string'; })) {
-        this._students = students;
+      students.every((val) => { return typeof val == 'string'; })) {
+      this._students = students;
     } else {
       throw new TypeError('Students must be an array of strings');
     }
