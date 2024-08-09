@@ -18,7 +18,7 @@ export default class Car {
   }
 
   set brand(brand) {
-    if (typeof brand == 'string') {
+    if (typeof brand === 'string') {
       this._brand = brand;
     } else {
       throw new Error('Brand must be of type string');
@@ -26,7 +26,7 @@ export default class Car {
   }
 
   set motor(motor) {
-    if (typeof motor == 'string') {
+    if (typeof motor === 'string') {
       this._motor = motor;
     } else {
       throw new Error('Motor must be of type string');
@@ -34,7 +34,7 @@ export default class Car {
   }
 
   set color(color) {
-    if (typeof color == 'string') {
+    if (typeof color === 'string') {
       this._color = color;
     } else {
       throw new Error('Color must be of type string');
