@@ -12,7 +12,7 @@ export default class HolbertonClass {
   }
 
   set size(size) {
-    if (typeof size == 'number') {
+    if (typeof size === 'number') {
       this._size = size;
     } else {
       throw new Error('Size must be a number');
@@ -20,7 +20,7 @@ export default class HolbertonClass {
   }
 
   set location(location) {
-    if (typeof location == 'string') {
+    if (typeof location === 'string') {
       this._location = location;
     } else {
       throw new Error('Location must be a string');
@@ -30,7 +30,7 @@ export default class HolbertonClass {
   toString() {
     return this.location;
   }
-  
+
   valueOf() {
     return this.size;
   }

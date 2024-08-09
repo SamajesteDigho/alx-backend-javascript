@@ -1,4 +1,4 @@
-import Car from './10-car'
+import Car from './10-car';
 
 export default class EVCar extends Car {
   constructor(brand, motor, color, range) {
@@ -11,7 +11,7 @@ export default class EVCar extends Car {
   }
 
   set range(range) {
-    if (typeof range == 'string') {
+    if (typeof range === 'string') {
       this._range = range;
     } else {
       throw new Error('Range must be a string');
