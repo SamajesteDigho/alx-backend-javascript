@@ -3,7 +3,7 @@ export default function cleanSet(set, startString) {
     return '';
   }
   const match = [];
-  set.forEach(element => element.startsWith(startString)
-  ? match.push(element.replace(startString, '')) : null); 
-  return match.join('-');;
+  set.forEach((elt) => elt.startsWith(startString)
+  ? match.push(elt.replace(startString, '')) : null); 
+  return match.join('-');
 }
