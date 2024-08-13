@@ -1,15 +1,5 @@
-import { queryAPI, weakMap } from "./100-weak.js";
+import getListStudentIds from "./1-get_list_student_ids.js";
+import getListStudents from "./0-get_list_students.js";
 
-const endpoint = { protocol: 'http', name: 'getUsers' };
-weakMap.get(endpoint);
-
-queryAPI(endpoint);
-console.log(weakMap.get(endpoint));
-
-queryAPI(endpoint);
-console.log(weakMap.get(endpoint));
-
-queryAPI(endpoint);
-queryAPI(endpoint);
-queryAPI(endpoint);
-queryAPI(endpoint);
+console.log(getListStudentIds("hello"));
+console.log(getListStudentIds(getListStudents()));
