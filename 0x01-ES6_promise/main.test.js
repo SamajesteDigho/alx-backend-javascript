@@ -1,12 +1,24 @@
-import handleProfileSignup from './6-final-user';
+import loadBalancer from "./7-load_balancer";
 
-test("handleProfileSignup returns the right array", async () => {
-    const queue = await handleProfileSignup('John', 'Doe', 'Gerald.jpg');
-    expect(queue).toEqual([
-      {
-        status: 'fulfilled',
-        value: { firstName: 'John', lastName: 'Doe' }
-      },
-      { status: 'rejected', value: 'Error: Gerald.jpg cannot be processed' }
-    ]);
+test("loadBalancer returns the value of the fastest promise", async () => {
+  const chinaSuccess = 'Downloading from China is faster';
+  const USASuccess = 'Downloading from USA is faster';
+
+  const promiseChina = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 100, chinaSuccess);
+  });
+
+  const promiseSlowChina = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 500, chinaSuccess);
+  });
+
+  const promiseUSA = new Promise(function(resolve, reject) {
+    setTimeout(resolve, 300, USASuccess);
+  });
+
+  const value = await loadBalancer(promiseChina, promiseUSA);
+  expect(value).toEqual('Downloading from China is faster');
+
+  const value2 = await loadBalancer(promiseSlowChina, promiseUSA);
+  expect(value2).toEqual('Downloading from USA is faster');
 });
