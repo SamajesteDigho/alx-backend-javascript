@@ -18,27 +18,15 @@ export default class Car {
   }
 
   set brand(brand) {
-    if (typeof brand === 'string') {
-      this._brand = brand;
-    } else {
-      throw new Error('Brand must be of type string');
-    }
+    this._brand = brand;
   }
 
   set motor(motor) {
-    if (typeof motor === 'string') {
-      this._motor = motor;
-    } else {
-      throw new Error('Motor must be of type string');
-    }
+    this._motor = motor;
   }
 
   set color(color) {
-    if (typeof color === 'string') {
-      this._color = color;
-    } else {
-      throw new Error('Color must be of type string');
-    }
+    this._color = color;
   }
 
   cloneCar() {
