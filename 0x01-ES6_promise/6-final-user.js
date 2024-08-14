@@ -8,7 +8,7 @@ export default function handleProfileSignup(firstName, lastName, filename) {
       let obj = {};
       if (elt.status === 'rejected') {
         obj.status = elt.status;
-        obj.value = elt.reason.message;
+        obj.value = `Error: ${elt.reason.message}`;
       } else {
         obj = { ...elt };
       }
