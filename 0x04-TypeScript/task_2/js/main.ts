@@ -40,6 +40,27 @@ function createEmployee(salary: string | number): Director | Teacher {
   }
   return new Director();
 }
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee('$500'));
+
+function isDirector(employee: unknown): employee is Director {
+  return employee instanceof Director;
+}
+
+function executeWork(employee: Director | Teacher): string {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  } else {
+    return employee.workTeacherTasks();
+  }
+}
+
+let Subjects: 'Math' | 'History';
+
+function teachClass(todayClass: typeof Subjects): string {
+  if (todayClass === "Math") {
+    return 'Teaching Math';
+  }
+  if (todayClass == "History") {
+    return 'Teaching History';
+  }
+}
+
