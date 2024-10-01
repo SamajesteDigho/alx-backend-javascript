@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function countStudents (path) {
+export default function countStudents (path) {
   fs.readFile(path, 'utf-8', (err, data) => {
     if (err) {
       throw new Error('Cannot load the database');
@@ -29,5 +29,3 @@ function countStudents (path) {
     }
   });
 }
-
-module.exports = countStudents;
