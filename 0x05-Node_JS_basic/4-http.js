@@ -4,7 +4,7 @@ const HOSTNAME = 'localhost';
 const PORT = 1245;
 
 const app = createServer((req, res) => {
-  res.setHeader('Content-Type', 'texxt/plain');
+  res.setHeader('Content-Type', 'text/plain');
   res.end('Hello Holberton School!');
 });
 
