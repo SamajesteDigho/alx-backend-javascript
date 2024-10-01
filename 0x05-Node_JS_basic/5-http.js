@@ -1,5 +1,5 @@
-import createServer from 'node:http';
-import countStudents from './3-read_file_async';
+const { createServer } = require('node:http');
+const countStudents = require('./3-read_file_async');
 
 const HOSTNAME = 'localhost';
 const PORT = 1245;
