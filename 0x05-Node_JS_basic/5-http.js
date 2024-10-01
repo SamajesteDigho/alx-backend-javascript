@@ -22,4 +22,4 @@ app.listen(PORT, HOSTNAME, () => {
   process.stdout.write('...\n');
 });
 
-module.exports = app;
+module.exports = { app };
