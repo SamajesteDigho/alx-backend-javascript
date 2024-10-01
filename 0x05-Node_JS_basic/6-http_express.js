@@ -4,7 +4,7 @@ const PORT = 1245;
 const app = express();
 
 app.listen(PORT, () => {
-  console.log('...');
+  process.stdout.write('...');
 });
 
 app.get('/', (req, res) => {
