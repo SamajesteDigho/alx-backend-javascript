@@ -11,4 +11,4 @@ baseRoutes.get('', AppController.getHomePage);
 studentRoutes.get('/', StudentsController.getAllStudents);
 studentRoutes.get('/:major', StudentsController.getAllStudentsByMajor);
 
-export  { baseRoutes, studentRoutes };
+export default  { baseRoutes, studentRoutes };
