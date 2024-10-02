@@ -29,4 +29,4 @@ function countStudents (path) {
   }
 }
 
-export default countStudents;
+export default { countStudents };
