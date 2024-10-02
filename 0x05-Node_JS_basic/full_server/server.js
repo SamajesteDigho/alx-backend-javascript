@@ -10,7 +10,7 @@ app.use((req, res, next) => {
 });
 
 app.use('', baseRoutes);
-// app.use('/students', studentRoutes);
+app.use('/students', studentRoutes);
 
 app.listen(PORT, () => {
     process.stdout.write('...');
