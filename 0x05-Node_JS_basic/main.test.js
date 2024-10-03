@@ -1,9 +1,9 @@
-const { expect } = require('chai');
+const { ShouldThrow, expect } = require('chai');
 const sinon = require('sinon');
 
-const displayMessage = require('./0-console');
+const countStudents = require('./2-read_file.js');
 
-describe('displayMessage', () => {
+describe('countStudents', () => {
   let consoleSpy;
 
   beforeEach(() => {
@@ -15,10 +15,10 @@ describe('displayMessage', () => {
   });
 
   it('logs to the console the right messages', () => {
-    displayMessage('Hello Holberton School!');
-    displayMessage('We are going to learn Node JS today');
+    countStudents('./database.csv');
 
-    expect(consoleSpy.calledWith('Hello Holberton School!')).to.be.true;
-    expect(consoleSpy.calledWith('We are going to learn Node JS today')).to.be.true;
+    expect(consoleSpy.calledWith('Number of students: 10')).to.be.true;
+    expect(consoleSpy.calledWith('Number of students in CS: 6. List: Johenn, Arielle, Jonathen, Emmenuel, Guillaume, Katie')).to.be.true;
+    expect(consoleSpy.calledWith('Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy')).to.be.true;
   });
 });

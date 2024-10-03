@@ -20,9 +20,9 @@ function countStudents(path) {
       FIELDS[parts[3]].push(parts[0]);
     });
 
-    process.stdin.write(`Number of students: ${NUMBER_OF_STUDENTS}\n`);
+    console.log(`Number of students: ${NUMBER_OF_STUDENTS}`);
     Object.keys(FIELDS).forEach((elt) => {
-      process.stdout.write(`Number of students in ${elt}: ${FIELDS[elt].length}. List: ${FIELDS[elt]}\n`);
+      console.log(`Number of students in ${elt}: ${FIELDS[elt].length}. List: ${FIELDS[elt].join(', ')}`);
     });
   } catch (err) {
     throw new Error('Cannot load the database');
