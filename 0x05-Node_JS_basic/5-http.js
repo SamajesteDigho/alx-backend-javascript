@@ -1,4 +1,4 @@
-const { createServer } = require('http');
+const { createServer } = require('node:http');
 const countStudents = require('./3-read_file_async');
 
 const HOSTNAME = 'localhost';
@@ -15,7 +15,7 @@ const app = createServer((req, res) => {
         res.end(`This is the list of our students\n${data}`);
       })
       .catch((err) => {
-        console.log(`Error: ${err}`);
+        res.end(`This is the list of our students\n${err.message}`);
       });
   }
 });
