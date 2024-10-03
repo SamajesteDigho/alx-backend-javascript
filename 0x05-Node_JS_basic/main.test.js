@@ -1,26 +1,21 @@
-const { expect } = require('chai');
-const sinon = require('sinon');
+const chai = require('chai');
+const chaiHttp = require('chai-http');
 
-const countStudents = require('./3-read_file_async.js');
+const app = require('./5-http');
 
-describe('countStudents', () => {
-  let consoleSpy;
+chai.use(chaiHttp);
+chai.should();
 
-  beforeEach(() => {
-    consoleSpy = sinon.spy(console, 'log');
-  });
-
-  afterEach(() => {
-    consoleSpy.restore();
-  });
-
-  it('logs to the console the right messages', (done) => {
-    countStudents('./database.csv').then(() => {
-      expect(consoleSpy.calledWith('Number of students: 10')).to.be.true;
-      expect(consoleSpy.calledWith('Number of students in CS: 6. List: Johenn, Arielle, Jonathen, Emmenuel, Guillaume, Katie')).to.be.true;
-      expect(consoleSpy.calledWith('Number of students in SWE: 4. List: Guillaume, Joseph, Paul, Tommy')).to.be.true;
-
-      done();
+describe('More complex HTTP server using node', () => {
+  describe('/endpoint', () => {
+    it('Returns the right content', (done) => {
+      chai.request(app)
+        .get('/')
+        .end((error, response) => {
+          chai.expect(response.text).to.equal('Hello Holberton School!');
+          chai.expect(response.statusCode).to.equal(200);
+          done();
+        });
     });
   });
 });
