@@ -1,4 +1,4 @@
-const { createServer } = require('node:http');
+const { createServer } = require('http');
 const countStudents = require('./3-read_file_async');
 
 const HOSTNAME = 'localhost';
@@ -10,11 +10,13 @@ const app = createServer(async (req, res) => {
   if (req.url === '/') {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    countStudents(database).then(data => {
-      res.end(`This is the list of our students ${data}`);
-    }).catch(err => {
-      console.log(`Error: ${err}`);
-    });
+    countStudents(database)
+      .then((data) => {
+        res.end(`This is the list of our students ${data}`);
+      })
+      .catch((err) => {
+        console.log(`Error: ${err}`);
+      });
   }
 });
 
@@ -22,4 +24,4 @@ app.listen(PORT, HOSTNAME, () => {
   process.stdout.write('...\n');
 });
 
-module.exports = { app };
+module.exports = app;
