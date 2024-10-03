@@ -9,7 +9,7 @@ const app = createServer((_, res) => {
 });
 
 app.listen(PORT, HOSTNAME, () => {
-  process.stdout.write('...');
+  console.log('...');
 });
 
 module.exports = app;
