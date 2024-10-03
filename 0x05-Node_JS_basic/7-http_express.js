@@ -17,7 +17,7 @@ app.get('/students', (_, res) => {
   countStudents(database).then((data) => {
     res.send(`This is the list of our students\n${data}`);
   }).catch((err) => {
-    res.send(`This is the list of our students\n${err}`);
+    res.send(`This is the list of our students\n${err.message}`);
   });
 });
 
