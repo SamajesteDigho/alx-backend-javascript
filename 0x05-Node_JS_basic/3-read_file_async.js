@@ -28,7 +28,7 @@ async function countStudents(path) {
         Object.keys(FIELDS).forEach((elt) => {
           string += `Number of students in ${elt}: ${FIELDS[elt].length}. List: ${FIELDS[elt].join(', ')}\n`;
         });
-        process.stdout.write(string);
+        console.log(string);
         resolve(string);
       }
     });
