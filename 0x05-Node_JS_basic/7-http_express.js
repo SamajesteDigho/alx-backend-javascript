@@ -9,15 +9,15 @@ app.listen(PORT, () => {
   process.stdout.write('...');
 });
 
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
   res.send('Hello Holberton School!');
 });
 
-app.get('/students', (req, res) => {
-  countStudents(database).then(data => {
-    res.send(`This is the list of our students${data}`);
+app.get('/students', (_, res) => {
+  countStudents(database).then((data) => {
+    res.send(`This is the list of our students\n${data}`);
   }).catch((err) => {
-    res.send(err);
+    res.send(`This is the list of our students\n${err}`);
   });
 });
 
