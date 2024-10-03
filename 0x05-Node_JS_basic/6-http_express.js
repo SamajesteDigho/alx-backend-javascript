@@ -7,8 +7,8 @@ app.listen(PORT, () => {
   process.stdout.write('...');
 });
 
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
   res.send('Hello Holberton School!');
 });
 
-module.exports = { app };
+module.exports = app;
