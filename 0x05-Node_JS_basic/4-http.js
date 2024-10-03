@@ -12,4 +12,4 @@ app.listen(PORT, HOSTNAME, () => {
   process.stdout.write('...');
 });
 
-export default app;
+module.exports = app;
