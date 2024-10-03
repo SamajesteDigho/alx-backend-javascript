@@ -1,4 +1,4 @@
-const { createServer } = require('node:http');
+const { createServer } = require('http');
 const countStudents = require('./3-read_file_async');
 
 const HOSTNAME = 'localhost';
