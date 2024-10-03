@@ -25,10 +25,8 @@ async function countStudents(path) {
         });
 
         string += `Number of students: ${NUMBER_OF_STUDENTS}\n`;
-        console.log(`Number of students: ${NUMBER_OF_STUDENTS}`);
         Object.keys(FIELDS).forEach((elt) => {
-          string += `Number of students in ${elt}: ${FIELDS[elt].length}. List: ${FIELDS[elt]}\n`;
-          console.log(`Number of students in ${elt}: ${FIELDS[elt].length}. List: ${FIELDS[elt].join(', ')}`);
+          string += `Number of students in ${elt}: ${FIELDS[elt].length}. List: ${FIELDS[elt].join(', ')}\n`;
         });
         resolve(string);
       }
