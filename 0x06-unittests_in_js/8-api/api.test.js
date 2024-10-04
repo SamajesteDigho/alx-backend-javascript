@@ -12,8 +12,8 @@ describe('test cases', () => {
     chai.request(app)
       .get('/')
       .end((_, res) => {
-        expect(res.text).to.equal('Welcome to the payment system');
-        expect(res.statusCode).to.equal(200);
+        expect(res.text).to.deep.equal('Welcome to the payment system');
+        expect(res.statusCode).to.deep.equal(200);
         done();
       });
   });
