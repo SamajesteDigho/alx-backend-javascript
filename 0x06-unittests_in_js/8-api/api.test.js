@@ -5,13 +5,15 @@ const app = require('./api');
 const expect = chai.expect;
 
 chai.use(chaiHttp);
-chai.should();
 
 describe('test cases', () => {
   it('checking index suite', (done) => {
     chai.request(app)
       .get('/')
-      .end((_, res) => {
+      .end((err, res) => {
+        if (err) {
+          done(err);
+        }
         expect(res.text).to.deep.equal('Welcome to the payment system');
         expect(res.statusCode).to.deep.equal(200);
         done();
