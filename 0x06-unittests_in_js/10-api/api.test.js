@@ -10,11 +10,11 @@ describe('test cases', () => {
     chai.request(app)
       .get('/available_payments')
       .end((err, res) => {
-        if (err) {
-          done(err);
-        }
+        expect(err).to.be.null;
         expect(res.statusCode).to.deep.equal(200);
-        expect(res.body).to.have.property('payment_methods', { credit_cards: true, paypal: false });
+        expect(res.body).to.have.property('payment_methods');
+        expect(res.body.payment_methods).to.have.property('credit_cards', true);
+        expect(res.body.payment_methods).to.have.property('paypal', false);
         done();
       });
   });
@@ -24,9 +24,7 @@ describe('test cases', () => {
       .post('/login')
       .send({ userName: 'Betty' })
       .end((err, res) => {
-        if (err) {
-          done(err);
-        }
+        expect(err).to.be.null;
         expect(res.statusCode).to.deep.equal(200);
         expect(res.text).to.deep.equal('Welcome Betty');
         done();
