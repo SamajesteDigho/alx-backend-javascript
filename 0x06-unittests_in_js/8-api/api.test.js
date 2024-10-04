@@ -9,9 +9,11 @@ chai.should();
 
 describe('test cases', () => {
   it('checking index suite', (done) => {
-    chai.request(app).get('/')
-      .end((err, res) => {
+    chai.request(app)
+      .get('/')
+      .end((_, res) => {
         expect(res.text).to.equal('Welcome to the payment system');
+        expect(res.statusCode).to.equal(200);
         done();
       });
   });

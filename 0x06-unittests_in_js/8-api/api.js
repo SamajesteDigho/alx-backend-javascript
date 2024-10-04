@@ -5,7 +5,7 @@ const PORT = 7865;
 
 app.listen(PORT, () => {
   console.log(`API available on localhost port ${PORT}`);
-})
+});
 
 app.get('/', (_, res) => {
   res.send('Welcome to the payment system');
