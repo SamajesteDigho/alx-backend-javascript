@@ -10,6 +10,6 @@ describe('test cases', () => {
     const spy = sinon.spy(console, 'log');
     const res = Utils.calculateNumber('SUM', 100, 20);
     sendPaymentRequestToApi(100, 20);
-    expect(spy.calledWith(`The total is: ${res}`));
+    expect(spy.calledWith(`The total is: ${res}`)).to.be.true;
   });
 });
